@@ -177,7 +177,7 @@ async function exe() {
     }
     alert("反映が完了しました。");
   } catch (err) {
-    alert("エラーが発生しました。");
+    alert("エラーが発生しました。\nエラーメッセージ:"+err);
   }
   bar.value = 0;
   btn.textContent = "反映";
