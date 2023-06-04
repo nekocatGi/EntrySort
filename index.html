@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EntrySort</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <link rel="icon" href="onpu.ico">
+  </head>
+  <body>
+    <h1>EntrySort</h1>
+    <p>ダウンロード・インストール不要、webブラウザ上で完結するUMSSortもどき。</p>
+    <p>フォルダ内のファイルのディレクトリエントリ順を並び替えて、MP3プレーヤーやカーナビ曲の順番を入れ替えられるサイトです。</p>
+    <p>反映が高速、フォルダの並び替えや日付順の並び替えもできるデスクトップアプリ版は<a href="https://www.dropbox.com/s/jhm2xith9ds851z/EntrySort.exe?dl=0">こちら</a>からダウンロードできます。</p>
+    <div><b style="color:red;">注意</b></div>
+    <div>- 日付順に並び替えすることはできません。</div>
+    <div>- フォルダの順番を並び替えすることはできません。</div>
+    <div>- ファイルの数によっては反映にかなり時間がかかります。</div>
+    <a href="/speed.html">- 反映が遅すぎる</a><br>
+    <div class="field">
+      <p>
+        <button onclick="getFolder()">場所の指定</button><span id="name"></span>
+        <button onclick="exe()" id="btn">反映</button>
+      </p>
+      <p>
+        <button onclick="move('up')">↑</button>
+        <button onclick="move('down')">↓</button>
+        <input type="number" id="index">の後ろへ
+        <button onclick="insert()">実行</button>
+      </p>
+      <p>動かす要素の数:<input type="number" value="1" onchange="select2()" id="n">つ</p>
+      <select id="-LISTBOX-" size="18" onchange="select()" multiple></select>
+      <progress value="0" max="1" id="-BAR-"></progress>
+      <p>
+        <button onclick="sort(1)">名前順(昇)</button>
+        <button onclick="sort(2)">名前順(降)</button>
+        <button onclick="sort(3)">順番反転</button>
+        <button onclick="sort(4)">シャッフル</button>
+        <button onclick="sort(5)">バックアップ</button>
+      </p>      
+    </div>
+  </body>
+</html>
