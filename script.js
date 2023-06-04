@@ -157,14 +157,14 @@ async function exe() {
     } else {
       const random = Math.random().toString(32).substring(2),
             temp = "temp_folder_" + random;
-      let childDirHandle = await dirHandle.getDirectoryHandle(temp, {
-        create: true,
-      });
       let handles = [];
       for (let fn of filenames) {
         let fileHandle = await dirHandle.getFileHandle(fn);
         handles.push(fileHandle);
       }
+      let childDirHandle = await dirHandle.getDirectoryHandle(temp, {
+        create: true,
+      });
       for (let fh of handles) {
         await fh.move(childDirHandle);
         bar.value += 0.5;
