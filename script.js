@@ -32,6 +32,7 @@ async function getFolder() {
             dirHandle = "";
             document.getElementById("name").textContent = "";
             alert("フォルダのソートはできません!");
+            listbox.innerHTML = "";
             return;
           }
           number++;
@@ -47,7 +48,8 @@ async function getFolder() {
       } else {
         dirHandle = "";
         document.getElementById("name").textContent = "";
-        alert("フォルダのソートはできません!");     
+        alert("フォルダのソートはできません!");
+        listbox.innerHTML = "";
       }
       return;
     }
